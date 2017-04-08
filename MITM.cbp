@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MITM" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="../MITM" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="libnet" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="-d vmnet8 -a 192.168.10.128 -b 192.168.10.129" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+				<MakeCommands>
+					<Build command="$make -f $makefile" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile clean$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="const.h" />
+		<Unit filename="convert.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="convert.h" />
+		<Unit filename="libnet.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="structures.h" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
